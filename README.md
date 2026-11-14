@@ -7,6 +7,7 @@
 | Skill | 用途 |
 | --- | --- |
 | [install-app](skills/install-app/SKILL.md) | 在 `~/app/<软件名>` 安装和维护自托管软件，交付配置、验证结果及运维文档。 |
+| [3xui](skills/3xui/SKILL.md) | 安装维护 3x-ui，配置 REALITY、动态订阅、Clash/小火箭接入与分流，排查客户端兼容问题。 |
 
 ## 发布为 GitHub 私有仓库
 
@@ -29,7 +30,7 @@ bash scripts/publish-github.sh
 ```bash
 gh auth login --hostname github.com --git-protocol https --web
 gh auth setup-git --hostname github.com
-gh repo clone 你的GitHub用户名/pmx-skills ~/app/pmx-skills
+gh repo clone pmx0117/pmx-skills ~/app/pmx-skills
 ```
 
 先确认目标机器没有需要保留的同名 skill，再复制完整目录：
@@ -37,6 +38,7 @@ gh repo clone 你的GitHub用户名/pmx-skills ~/app/pmx-skills
 ```bash
 mkdir -p ~/.agents/skills
 cp -R ~/app/pmx-skills/skills/install-app ~/.agents/skills/
+cp -R ~/app/pmx-skills/skills/3xui ~/.agents/skills/
 ```
 
 `references/` 和 `agents/` 均需随 `SKILL.md` 一起复制。如果目标已安装同名 skill，先将旧目录移到备份路径，再复制。
@@ -46,9 +48,10 @@ cp -R ~/app/pmx-skills/skills/install-app ~/.agents/skills/
 ```bash
 mkdir -p ~/.codex/skills
 ln -s ~/.agents/skills/install-app ~/.codex/skills/install-app
+ln -s ~/.agents/skills/3xui ~/.codex/skills/3xui
 ```
 
-重新启动 Codex，并确认能通过 `$install-app` 调用。不同客户端版本的发现行为以目标机器实际结果为准。
+重新启动 Codex，并确认能通过 `$install-app`、`$3xui` 调用。不同客户端版本的发现行为以目标机器实际结果为准。
 
 ## 更新和新增
 

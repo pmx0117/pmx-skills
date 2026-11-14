@@ -41,9 +41,9 @@ if ! git config user.email >/dev/null; then
   git config --local user.email "${account_id}+${account}@users.noreply.github.com"
 fi
 
-git add -- README.md AGENTS.md .gitignore scripts/publish-github.sh skills/install-app
+git add -- README.md AGENTS.md .gitignore scripts/publish-github.sh skills
 git diff --cached --stat
-git commit -m 'Add install-app skill and distribution documentation'
+git commit -m 'Add personal skills and distribution documentation'
 gh auth setup-git --hostname github.com
 gh repo create "$remote_repo" --private --source=. --remote=origin --push
 printf '已创建并推送私有仓库：https://github.com/%s\n' "$remote_repo"

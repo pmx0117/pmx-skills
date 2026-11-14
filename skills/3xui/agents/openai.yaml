@@ -1,0 +1,4 @@
+interface:
+  display_name: "3x-ui 安装与配置"
+  short_description: "安装维护 3x-ui，配置 REALITY、动态订阅与客户端分流并验证兼容性"
+  default_prompt: "使用 $3xui 安装或维护 3x-ui，配置所需节点、订阅和客户端规则，并验证实际连接及更新交接文档。"
