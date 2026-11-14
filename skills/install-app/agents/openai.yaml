@@ -1,0 +1,4 @@
+interface:
+  display_name: "软件安装与维护交接"
+  short_description: "将服务部署到 ~/app/软件名，并保存版本、当前配置、用户需求及运维交接文档"
+  default_prompt: "使用 $install-app 将指定软件安装到 ~/app/软件名，并完成验证和维护文档。"

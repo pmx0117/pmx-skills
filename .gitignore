@@ -1,0 +1,16 @@
+.DS_Store
+*.swp
+*~
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+secrets/
+data/
+backups/
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
